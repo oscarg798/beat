@@ -5,8 +5,9 @@ MessagesProvider.$inject = ['$rootScope'];
 function MessagesProvider($rootScope) {
   var self = {
       emailPlaceholder:'Correo Electronico',
-      passwordPlaceholder:'Contraseña'
-
+      passwordPlaceholder:'Contraseña',
+      namePlaceholder:'Nombre',
+      sendPlaceholder:'Enviar'
 
   };
 

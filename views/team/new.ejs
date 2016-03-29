@@ -1,0 +1,17 @@
+<div class="container" ng-app="TeamModule" ng-controller="TeamController as TeamControl">
+  <div class="row">
+    <form class="col s12" ng-submit="TeamControl.createTeam()">
+      <div class="row">
+        <div class="input-field col s6 m6 l12">
+          <input placeholder="{{::i18n.namePlaceholder}}"
+          type="text" class="validate" ng-model="TeamControl.team.name">
+          <label>{{::i18n.namePlaceholder}}</label>
+        </div>
+        <div class="input-field col s6 m6 l12">
+          <input
+          type="submit" class="validate" value="{{::i18n.sendPlaceholder}}">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
