@@ -12,7 +12,7 @@
     <!--STYLES END-->
   </head>
 
-  <body>
+  <body ng-app="AppModule">
     <nav>
    <div class="nav-wrapper">
      <a href="#" class="brand-logo">Beat</a>
@@ -23,7 +23,8 @@
      </ul>
    </div>
  </nav>
-    <%- body %>
+   <div ng-view></div>
+  
 
 
 
@@ -79,16 +80,18 @@
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
     <script src="/js/dependencies/angular.min.js"></script>
+    <script src="/js/dependencies/angular-route.min.js"></script>
     <script src="/js/dependencies/jquery-1.12.2.min.js"></script>
     <script src="/js/dependencies/materialize.min.js"></script>
     <script src="/js/public/common/app.module.js"></script>
-    <script src="/js/public/match/match.module.js"></script>
-    <script src="/js/public/team/team.module.js"></script>
-    <script src="/js/public/user/user.module.js"></script>
-    <script src="/js/public/user/user.factory.js"></script>
     <script src="/js/public/common/messages.provider.js"></script>
+    <script src="/js/public/match/match.module.js"></script>
+    <script src="/js/public/user/user.module.js"></script>
+    <script src="/js/public/team/team.factory.js"></script>
+    <script src="/js/public/user/user.factory.js"></script>
     <script src="/js/public/match/match.controller.js"></script>
-    <script src="/js/public/team/team.controller.js"></script>
+    <script src="/js/public/team/newTeam.controller.js"></script>
+    <script src="/js/public/team/showTeam.controller.js"></script>
     <script src="/js/public/user/user.controller.js"></script>
     <!--SCRIPTS END-->
   </body>
