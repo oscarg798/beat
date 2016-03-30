@@ -18,9 +18,9 @@ function onImageUploadedSuccess(id, url, res) {
             req.session.flash = {
                 err: sails.errorMessage(err)
             }
-             return res.redirect('#/team/show/'+id);
+             return res.redirect('/team/show/'+id);
         } else {
-            return res.redirect('#/team/show/'+id);
+            return res.redirect('/team/show/'+id);
         }
     });
 }

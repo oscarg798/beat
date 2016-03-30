@@ -13,7 +13,7 @@ function NewTeamController($location, teamService, MessagesProvider) {
   self.createTeam = createTeam;
 
   function createTeamSuccess(data) {
-      $location.path('team/show/'+data.id);
+      $location.path('/team/show/'+data.id);
   }
 
   function createTeamFail(error) {

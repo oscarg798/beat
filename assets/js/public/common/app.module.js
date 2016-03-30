@@ -12,5 +12,10 @@ function AppModule($routeProvider, $locationProvider) {
         })
         .otherwise({
             redirectTo: 'team/new'
-        });;
+        });
+
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: true
+    });
 }
