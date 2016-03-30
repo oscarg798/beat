@@ -8,7 +8,9 @@ function MessagesProvider($rootScope) {
       passwordPlaceholder:'Contraseña',
       namePlaceholder:'Nombre',
       sendPlaceholder:'Enviar',
-      newTeamLabel:'Registro de Equipos'
+      newTeamLabel:'Registro de Equipos',
+      uploadImageLabel:'Subir Image',
+      selectImageLabel:'Seleccionar Imagen'
   };
 
   $rootScope.i18n = self;

@@ -12,6 +12,9 @@ module.exports = {
         type:'string',
         required:true
       },
+      teamImage:{
+        type:'string',
+      },
       matchesAsVisitor:{
         collection:'Match',
         via:'visitorTeam'

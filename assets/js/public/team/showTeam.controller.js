@@ -1,17 +1,54 @@
 angular.module('AppModule').controller('ShowTeamController', ShowTeamController);
 
-ShowTeamController.$inject = ['$rootScope', 'TeamService', 'MessagesProvider'];
+ShowTeamController.$inject = ['$timeout', '$routeParams', 'TeamService', 'MessagesProvider'];
 
-function ShowTeamController($rootScope, TeamService,  MessagesProvider) {
-   var self = this;
+function ShowTeamController($timeout, $routeParams, TeamService, MessagesProvider) {
+    var self = this;
 
-   self.teamID = '';
+    self.team = {};
 
-   function getTeam() {
-      self.teamID = $rootScope.teamID;
-      $rootScope.teamID= null;
-   }
+    self.teamID = '';
 
-   getTeam();
+    self.upload= upload;
+
+    self.uploadAction= '';
+
+
+
+    function getTeamSucess(data) {
+        $timeout(function() {
+            self.team = data.team;
+            self.uploadAction= '/team/upload/'+self.team.id;
+        }, 0);
+
+    }
+
+    function getTeamFail(error) {
+        console.log(error);
+    }
+
+
+    function getTeam() {
+        self.teamID = $routeParams.id;
+
+        TeamService.getTeam(self.teamID).then(getTeamSucess,
+            getTeamFail);
+
+    }
+
+    function uploadSuccess(data) {
+    	console.log(data);
+    }
+
+    function uploadFail(error) {
+    	console.log(JSON.stringify(error));
+    }
+
+    function upload(file) {
+    	TeamService.uploadTeamImage(file).then(uploadSuccess,
+    		uploadFail);
+    }
+
+    getTeam();
 
 }

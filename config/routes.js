@@ -35,8 +35,9 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  'GET /user': {view:'user/new'},
-  'POST /user/show':'UserController.show'
+  'GET /user/new':{view:'user/new'},
+  'POST /team/getByID':'TeamController.getByID',
+  'POST /team/upload':'TeamController.upload'
 
   /***************************************************************************
   *                                                                          *

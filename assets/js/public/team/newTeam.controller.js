@@ -1,8 +1,8 @@
 angular.module('AppModule').controller('NewTeamController', NewTeamController);
 
-NewTeamController.$inject = ['$rootScope', '$location','TeamService', 'MessagesProvider'];
+NewTeamController.$inject = ['$location','TeamService', 'MessagesProvider'];
 
-function NewTeamController($rootScope, $location, teamService, MessagesProvider) {
+function NewTeamController($location, teamService, MessagesProvider) {
   var self = this;
 
   self.team = {
@@ -13,8 +13,7 @@ function NewTeamController($rootScope, $location, teamService, MessagesProvider)
   self.createTeam = createTeam;
 
   function createTeamSuccess(data) {
-      $rootScope.teamID = data.id;
-      $location.path('/team/show/'+data.id);
+      $location.path('team/show/'+data.id);
   }
 
   function createTeamFail(error) {

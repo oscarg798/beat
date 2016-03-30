@@ -1,21 +1,18 @@
-<div class="container" ng-app="UserModule" ng-controller="UserController as UserControl">
+<form id="main-contact-form" enctype="multipart/form-data"  class=" row" name="contact-form" method="post" action="/team/upload/23">
+  <div class="row center" >
+    <br/>
+    <p class="heading h1 myFont red-text  lighten-1 center">Cambiar Imagen</p>
+    <br/>
+    <div class="col s4 offset-s3" >
+      <input id="image" type="file" name="image" class="image center " />
+    </div>
+  </div>
   <div class="row">
-    <form class="col s12" ng-submit="UserControl.createUser()">
-      <div class="row">
-        <div class="input-field col s6 m6 l12">
-          <input placeholder="{{::i18n.emailPlaceholder}}"
-          type="email" class="validate" ng-model="UserControl.user.email">
-          <label>{{::i18n.emailPlaceholder}}</label>
-        </div>
-        <div class="input-field col s6 m6 l12">
-          <input placeholder="{{::i18n.passwordPlaceholder}}"
-           type="password" class="validate" ng-model="UserControl.user.password">
-          <label>{{::i18n.passwordPlaceholder}}</label>
-        </div>
-        <div class="input-field col s6 m6 l12">
-          <input type="submit">
-        </div>
-      </div>
-    </form>
+    <div class=" col s4 offset-s3 " >
+      <button id="target" type="submit" name="submit" class="btn waves-effect waves-light right red lighten-1" >Enviar</button>
+      <a href="#!" class=" modal-action right modal-close btn waves-effect waves-light right grey">Cancelar</a>
+      
+    </div>
   </div>
 </div>
+</form>
